@@ -1,0 +1,36 @@
+{
+  "name": "cozy-konnector-bank",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carrieje/cozy-konnector-bank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "cozy-konnector-libs": "^3.2.5",
+    "moment-timezone": "^0.5.14"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "cozy-konnector-dev src/index.js",
+    "standalone": "cozy-konnector-standalone src/index.js",
+    "standalone:record": "REPLAY=record cozy-konnector-standalone src/index.js",
+    "standalone:replay": "REPLAY=replay cozy-konnector-standalone src/index.js",
+    "build": "webpack",
+    "lint": "standard --fix",
+    "test": "jest",
+    "deploy:travis": "git-directory-deploy --username <YOUR_GH_USERNAME> --email <YOUR_EMAIL> --directory build/ --repo=https://$GITHUB_TOKEN@github.com/<USERNAME_GH>/<SLUG_GH>.git",
+    "deploy": "git-directory-deploy --directory build/ --branch build --repo=https://github.com/carrieje/cozy-konnector-bank.git"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "git-directory-deploy": "^1.5.1",
+    "standard": "^10.0.3",
+    "jest": "^22.4.2",
+    "webpack": "^3",
+    "replay": "^2.1.4"
+  }
+}
